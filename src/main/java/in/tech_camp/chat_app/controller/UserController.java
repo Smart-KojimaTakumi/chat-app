@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.MapBindingResult;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -23,12 +23,6 @@ import in.tech_camp.chat_app.service.UserService;
 import in.tech_camp.chat_app.validation.ValidationOrder;
 import lombok.AllArgsConstructor;
 
-
-
-
-
-
-
 @Controller
 @AllArgsConstructor
 public class UserController {
@@ -44,7 +38,7 @@ public class UserController {
   }
 
   @PostMapping("/user")
-  public String createUser(@ModelAttribute("userForm") @Validated(ValidationOrder.class) UserForm userForm,MapBindingResult result,Model model) {
+  public String createUser(@ModelAttribute("userForm") @Validated(ValidationOrder.class) UserForm userForm,BindingResult result,Model model) {
       //TODO: process POST request
       userForm.validatePasswordConfirmation(result);
       if(userRepository.existsByEmail(userForm.getEmail())){
@@ -104,7 +98,7 @@ public class UserController {
   }
   
   @PostMapping("/users/{userId}")
-  public String updateUser(@PathVariable("userId")Integer userId,@ModelAttribute("user") @Validated(ValidationOrder.class) UserEditForm userEditForm,MapBindingResult result,Model model) {
+  public String updateUser(@PathVariable("userId")Integer userId,@ModelAttribute("user") @Validated(ValidationOrder.class) UserEditForm userEditForm,BindingResult result,Model model) {
       //TODO: process POST request
       String newEmail = userEditForm.getEmail();
       if(userRepository.existsByEmailExcludingCurrent(newEmail, userId)){
