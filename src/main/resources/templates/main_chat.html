@@ -9,7 +9,7 @@
     <th:block th:each="message : ${messages}">
       <div class="main_chat-name_date">
         <p class="main_chat-name" th:text="${message.user.name}">Tom</p>
-        <p class="main_chat-date" th:text="${message.createdAt}">2020/3/31(Wed) 12:43:30</p>
+        <p class="main_chat-date" th:text="${#dates.format(message.createdAt, 'yyyy/MM/dd HH:mm:ss')}">2020/3/31(Wed) 12:43:30</p>
       </div>
       <p class="main_chat-writing" th:text="${message.content}">おはよう</p>
     </th:block>
