@@ -7,23 +7,26 @@
       <input type="submit" value="チャットを終了する" class="main_chat-chatend">
     </form>
   </div>
-  <div class="main_chat-content">
+  <div class="main_chat-content" style="overflow: scroll;">
     <th:block th:each="message : ${messages}">
       <div class="main_chat-name_date">
         <p class="main_chat-name" th:text="${message.user.name}">Tom</p>
         <p class="main_chat-date" th:text="${#dates.format(message.createdAt, 'yyyy/MM/dd HH:mm:ss')}">2020/3/31(Wed) 12:43:30</p>
       </div>
       <p class="main_chat-writing" th:text="${message.content}">おはよう</p>
+      <div th:if="${message.image}">
+        <img th:src="@{${message.image}}" alt="メッセージ画像" style="width: 500px; height: 500px; margin-left: 40px;"/>
+      </div>
     </th:block>
   </div>
   <div class="main_chat-footer">
     <form th:action="@{/rooms/{roomId}/messages(roomId=${roomId})}" method="post" th:object="${messageForm}"
-      class="form">
+      class="form" enctype="multipart/form-data">
       <div class="form-input">
         <input th:field="*{content}" class="form-message" placeholder="type a message">
         <label class="form-image">
           <span class="image-file">画像</span>
-          <input type="file" class="hidden">
+          <input type="file" th:field="*{image}" class="hidden">
         </label>
       </div>
       <input class="form-submit" type="submit" value="送信">
