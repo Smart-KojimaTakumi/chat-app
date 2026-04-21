@@ -14,6 +14,9 @@
         <p class="main_chat-date" th:text="${#dates.format(message.createdAt, 'yyyy/MM/dd HH:mm:ss')}">2020/3/31(Wed) 12:43:30</p>
       </div>
       <p class="main_chat-writing" th:text="${message.content}">おはよう</p>
+      <div th:if="${message.image}">
+        <img th:src="@{${message.image}}" alt="メッセージ画像" style="width: 500px; height: 500px; margin-left: 40px;"/>
+      </div>
     </th:block>
   </div>
   <div class="main_chat-footer">
