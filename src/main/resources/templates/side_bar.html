@@ -9,7 +9,7 @@
 
   <div class="side_bar-labels">
     <div th:each="room : ${rooms}" class="side_bar-label">
-      <a href="#" th:text="${room.name}">techroom</a>
+      <a th:href="@{/rooms/{roomId}/messages(roomId=${room.id})}" th:text="${room.name}">techroom</a>
     </div>
   </div>
 </div>
