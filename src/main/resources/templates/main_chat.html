@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="ja">
 <div th:fragment="main_chat">
   <div class="main_chat-header">
-    <a href="#" class="main_chat-chatname">hogefuga</a>
+    <a href="#" class="main_chat-chatname" th:text="${room.name}">hogefuga</a>
     <a href="#" class="main_chat-chatend">チャットを終了する</a>
   </div>
   <div class="main_chat-content">
