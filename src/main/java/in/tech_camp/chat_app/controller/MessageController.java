@@ -41,11 +41,14 @@ import lombok.AllArgsConstructor;
       List<RoomEntity> roomList = roomUserEntities.stream()
           .map(RoomUserEntity::getRoom)
           .collect(Collectors.toList());
-      System.out.println(roomList);
       model.addAttribute("rooms", roomList);
 
       model.addAttribute("messageForm", new MessageForm());
       model.addAttribute("roomId",roomId);
+
+      List<MessageEntity> messages = messageRepository.findByRoomId(roomId);
+      model.addAttribute("messages",messages);
+      System.out.println(messages);
       return "messages/index";
     }
 
