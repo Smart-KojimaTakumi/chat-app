@@ -23,7 +23,7 @@ import in.tech_camp.chat_app.entity.UserEntity;
   
     private final RoomUserRepository roomUserRepository;
   
-    @GetMapping("/")
+    @GetMapping("/message")
     public String showMessages(@AuthenticationPrincipal CustomUserDetail currentUser, Model model){
       UserEntity user = userRepository.findById(currentUser.getId());
       model.addAttribute("user", user);
