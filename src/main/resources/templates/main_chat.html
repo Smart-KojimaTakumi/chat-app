@@ -7,7 +7,7 @@
       <input type="submit" value="チャットを終了する" class="main_chat-chatend">
     </form>
   </div>
-  <div class="main_chat-content">
+  <div class="main_chat-content" style="overflow: scroll;">
     <th:block th:each="message : ${messages}">
       <div class="main_chat-name_date">
         <p class="main_chat-name" th:text="${message.user.name}">Tom</p>
