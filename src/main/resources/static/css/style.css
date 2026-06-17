@@ -1,0 +1,167 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.wrapper{
+  display: flex;
+}
+
+.side_bar{
+  width: 300px;
+  height: 100vh;
+}
+
+.main_chat{
+  width: calc(100vw - 300px);
+}
+
+.side_header{
+  height: 100px;
+  background-color: #253141;
+  padding: 0 20px;
+}
+
+.side_content{
+  height: calc(100vh - 100px);
+  background-color: #2F3E51;
+  padding: 0 20px;
+  overflow-y: scroll;
+}
+
+.main_header{
+  height: 100px;
+  background-color: #FFF;
+  padding: 0 40px;
+}
+
+.main_content{
+  height: calc(100vh - 100px - 90px);
+  background-color: #FAFAFA;
+  padding: 46px 40px 0;
+}
+
+.main_footer{
+  height: 90px;
+  background-color: #DDD;
+  padding: 20px 40px;
+}
+
+.side_header_content{
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.side_header_content p{
+  font-size: 16px;
+  color: #FAFAFA;
+}
+
+.side_header_content a{
+  padding: 14px;
+  color: deepskyblue;
+  font-size: 10px;
+  border: 1px solid lightblue;
+}
+
+.side_content p{
+  padding-top: 20px;
+  padding-bottom: 40px;
+  color: white;
+}
+
+.main_header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main_header p{
+  font-size: 24px;
+  color: #333;
+}
+
+.main_header a{
+  padding: 20px;
+  color: darkred;
+  border: 1px solid darkred;
+}
+
+.content{
+  padding-top: 10px;
+  padding-bottom: 40px;
+}
+
+.name_date_content{
+  display: flex;
+  padding-bottom: 10px;
+}
+
+.name{
+  font-size: 16px;
+  color: #434A54;
+  margin-right: 10px;
+}
+
+.date{
+  font-size: 12px;
+  color: #999;
+}
+
+.text{
+  font-size: 14px;
+  padding-top: 0;
+  padding-bottom: 0;
+  color: #434A54;
+}
+
+.main_footer_form{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form_input{
+  margin-right: 15px;
+  width: 100%;
+  display: flex;
+  background-color: white;
+}
+
+.main_input_text{
+  padding-left: 10px;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  background-color: white;
+  border: none;
+}
+
+.form_image{
+  font-size: 12px;
+  background-color: lightblue;
+  color: white;
+  padding: 12px;
+  width: 60px;
+  margin: 5px 10px;
+  text-align: center;
+}
+
+.main_input_file{
+  display: none;
+}
+
+.main_input_submit{
+  font-size: 16px;
+  color: white;
+  background-color: #38AEF0;
+  height: 50px;
+  line-height: 50px;
+  padding-right: 20px;
+  padding-left: 20px;
+  border: none;
+}
