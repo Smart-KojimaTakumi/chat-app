@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,10 +8,16 @@
   <link rel="stylesheet" th:href="@{/css/style.css}">
   <title>ChatApp</title>
 </head>
+
 <body>
   <div class="wrapper">
-    <div th:insert="~{side_bar :: side_bar}"></div>
-    <div th:insert="~{main_chat :: main_chat}"></div>
+    <div class="side_bar">
+      <div th:insert="~{side_bar :: side_bar}"></div>
+    </div>
+    <div class="main_chat">
+      <div th:insert="~{main_chat :: main_chat}"></div>
+    </div>
   </div>
 </body>
+
 </html>
